@@ -1,16 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { useDispatch } from "react-redux";
 import { changeColor } from "./features/themeSlice";
 
 function ChangeColor() {
-  const [color, setColor] = useState("green");
   const [mode, setMode] = useState("light");
   const dispatch = useDispatch();
+  // No need to keep color value in state
+  const colorRef = useRef();
 
   return (
     <div>
       <div>
-        <select onChange={(e) => setColor(e.target.value)} defaultValue={color}>
+        <select ref={colorRef} defaultValue={colorRef?.current?.value}>
           {mode === "dark" && <option value="red">Red</option>}
           <option value="yellow">Yellow</option>
           <option value="green">Green</option>
@@ -26,7 +27,7 @@ function ChangeColor() {
         onChange={(e) => setMode(e.target.value)}
       />
       Dark
-      {color !== "red" && (
+      {colorRef.current?.value !== "red" && (
         <span>
           <input
             type="radio"
@@ -41,8 +42,13 @@ function ChangeColor() {
       <div>
         <button
           onClick={(e) => {
-            console.log(mode === "dark" ? color : "light" + color);
-            dispatch(changeColor(mode === "dark" ? color : "light" + color));
+            dispatch(
+              changeColor(
+                mode === "dark"
+                  ? colorRef.current?.value
+                  : "light" + colorRef.current?.value
+              )
+            );
           }}
         >
           Change Color
