@@ -84,7 +84,11 @@ export const UseEffectExample = () => {
           There are more effective ways of retrieving data rather than the
           useEffect() hook - such as
         </span>{" "}
-        <a href="https://www.youtube.com/watch?v=NOvx4LB6Hfk" target="_blank">
+        <a
+          rel="noreferrer"
+          href="https://www.youtube.com/watch?v=NOvx4LB6Hfk"
+          target="_blank"
+        >
           Tanstack Query
         </a>
         .

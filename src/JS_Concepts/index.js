@@ -4,6 +4,7 @@ import "react-dropdown/style.css";
 import { CounterComponent } from "./CounterComponent";
 import { CurriedInputComponent } from "./CurriedInputComponent";
 import { FilterableList } from "./FilterableList";
+import { PolyfillExample } from "./Polyfill";
 // import Select from "react-select/base";
 // import Select from "react-select/base";
 
@@ -11,6 +12,7 @@ const options = [
   { value: 1, label: "Closure" },
   { value: 2, label: "Currying" },
   { value: 3, label: "Memoization" },
+  { value: 4, label: "Polyfill" },
 ];
 
 const customStyles = {
@@ -37,6 +39,8 @@ function getChapter(chapterNo) {
       return <CurriedInputComponent />;
     case 3:
       return <FilterableList />;
+    case 4:
+      return <PolyfillExample />;
     default:
       return null;
   }
@@ -58,6 +62,7 @@ export default function JS_Concepts() {
         <a
           href="https://www.youtube.com/watch?v=JXNZ1pZ1xDg"
           target="_blank"
+          rel="noreferrer"
           style={{ fontSize: "18px", fontWeight: "bold" }}
         >
           3 JavaScript Concepts that Will Make You A Better React Developer

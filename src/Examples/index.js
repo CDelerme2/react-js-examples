@@ -53,7 +53,7 @@ const chapters = [
 const tanstackExamples = [8, 13];
 
 function getChapter(chapterNo) {
-  console.log("getChapter()", chapterNo);
+  // console.log("getChapter()", chapterNo);
   const queryClient = tanstackExamples.includes(chapterNo)
     ? new QueryClient({
         // defaultOptions applies to every query and mutation
@@ -126,9 +126,7 @@ function getChapter(chapterNo) {
 
 export function FunctionalExamples() {
   const [chapterNo, setChapterNo] = useState(1);
-  // const { chapter } = useParams();
 
-  // console.log("FunctionalExamples()=", chapter);
   return (
     <div
       key={66}
@@ -143,13 +141,25 @@ export function FunctionalExamples() {
       <h4>Select a functionality example:</h4>
       <Dropdown
         options={chapters}
-        onChange={(option) => setChapterNo(option?.value)}
-        // value={chapters[parseInt(chapter) - 1]}
-        value={chapters[chapterNo - 1]}
+        onChange={(option) => {
+          setChapterNo(option?.value);
+          localStorage.setItem("chapter", option?.value.toString() || "");
+          localStorage.setItem(
+            "chaptersVisited",
+            JSON.stringify([option?.value || chapters[chapterNo - 1]])
+          );
+        }}
+        value={
+          chapters[parseInt(localStorage.getItem("chapter") - 1)] ||
+          chapters[chapterNo - 1]
+        }
         placeholder="Select an example"
       />
-      {getChapter(chapterNo)}
-      {/* {getChapter(parseInt(chapter))} */}
+      {getChapter(
+        parseInt(localStorage.getItem("chapter")) ||
+          chapterNo ||
+          chapters[chapterNo - 1]
+      )}
     </div>
   );
 }
