@@ -2,11 +2,9 @@ import "./App.css";
 import { useState, lazy, Suspense } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import "rc-select/assets/index.css";
-// import Tree, { TreeNode } from "rc-tree";
+import { FunctionalExamples } from "./Examples/index";
 // import { JS_Concepts } from "./JS_Concepts/index";
 // import { Hooks } from "./Hooks/index";
-import { FunctionalExamples } from "./Examples/index";
-
 const JS_Concepts = lazy(() => import("./JS_Concepts/index"));
 const Hooks = lazy(() => import("./Hooks/index"));
 // const FunctionalExamples = lazy(() =>

@@ -160,6 +160,7 @@ export function FunctionalExamples() {
           chapterNo ||
           chapters[chapterNo - 1]
       )}
+      {/* {getChapter(parseInt(chapter))} */}
     </div>
   );
 }
