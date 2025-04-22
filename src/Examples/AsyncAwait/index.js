@@ -45,7 +45,6 @@ export const AsyncAwaitExample = () => {
           fontFamily: "monospace",
           color: "darkred",
           backgroundColor: "#f1f1f1",
-          padding: "2px",
           fontSize: "105%",
           width: "480px",
           textAlign: "left",

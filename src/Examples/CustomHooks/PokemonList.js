@@ -1,4 +1,3 @@
-import { useState } from "react";
 import useQuery from "./useQuery";
 import axios from "axios";
 

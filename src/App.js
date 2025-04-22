@@ -1,5 +1,5 @@
 import "./App.css";
-import { useState, lazy, Suspense } from "react";
+import { lazy, Suspense } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import "rc-select/assets/index.css";
 import { FunctionalExamples } from "./Examples/index";
@@ -11,32 +11,14 @@ const Hooks = lazy(() => import("./Hooks/index"));
 //   delayLoadProcess(import("./Examples/index"))
 // );
 
-function getTutorial(tutorialNo) {
-  switch (tutorialNo) {
-    case 1:
-      return <JS_Concepts />;
-    case 2:
-      return <Hooks />;
-    case 3:
-      return <FunctionalExamples />;
-    default:
-      return null;
-  }
-}
-async function delayLoadProcess(promise) {
-  // delay for demo purposes
-  return new Promise((resolve) => {
-    setTimeout(resolve, 3000);
-  }).then(() => promise);
-}
+// async function delayLoadProcess(promise) {
+//   // delay for demo purposes
+//   return new Promise((resolve) => {
+//     setTimeout(resolve, 3000);
+//   }).then(() => promise);
+// }
 
 function App() {
-  const [tutorialNo, setTutorialNo] = useState(3);
-  const tutorials = [
-    { value: 1, label: "JavaScript Concepts" },
-    { value: 2, label: "React Hooks" },
-    { value: 3, label: "Functional Examples" },
-  ];
   return (
     <>
       <Router>
