@@ -5,6 +5,7 @@ import { CounterComponent } from "./CounterComponent";
 import { CurriedInputComponent } from "./CurriedInputComponent";
 import { FilterableList } from "./FilterableList";
 import { PolyfillExample } from "./Polyfill";
+import { XSSAttackExample } from "./XSSAttack";
 // import Select from "react-select/base";
 // import Select from "react-select/base";
 
@@ -13,6 +14,7 @@ const options = [
   { value: 2, label: "Currying" },
   { value: 3, label: "Memoization" },
   { value: 4, label: "Polyfill" },
+  { value: 5, label: "XSS Attacks" },
 ];
 
 const customStyles = {
@@ -41,6 +43,8 @@ function getChapter(chapterNo) {
       return <FilterableList />;
     case 4:
       return <PolyfillExample />;
+    case 5:
+      return <XSSAttackExample />;
     default:
       return null;
   }
