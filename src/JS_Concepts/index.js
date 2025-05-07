@@ -6,6 +6,7 @@ import { CurriedInputComponent } from "./CurriedInputComponent";
 import { FilterableList } from "./FilterableList";
 import { PolyfillExample } from "./Polyfill";
 import { XSSAttackExample } from "./XSSAttack";
+import { ShadowDOMExample } from "./ShadowDOM";
 // import Select from "react-select/base";
 // import Select from "react-select/base";
 
@@ -15,23 +16,24 @@ const options = [
   { value: 3, label: "Memoization" },
   { value: 4, label: "Polyfill" },
   { value: 5, label: "XSS Attacks" },
+  { value: 6, label: "Shadow DOM" },
 ];
 
-const customStyles = {
-  control: (provided) => ({
-    ...provided,
-    backgroundColor: "white",
-    padding: "5px 10px",
-    border: "1px solid black",
-    boxShadow: "0 2px 4px rgba(0,0,0,.2)",
-  }),
-  option: (provided, state) => ({
-    ...provided,
-    borderBottom: "1px dotted pink",
-    color: state.isSelected ? "white" : "black",
-    backgroundColor: state.isSelected ? "hotpink" : "white",
-  }),
-};
+// const customStyles = {
+//   control: (provided) => ({
+//     ...provided,
+//     backgroundColor: "white",
+//     padding: "5px 10px",
+//     border: "1px solid black",
+//     boxShadow: "0 2px 4px rgba(0,0,0,.2)",
+//   }),
+//   option: (provided, state) => ({
+//     ...provided,
+//     borderBottom: "1px dotted pink",
+//     color: state.isSelected ? "white" : "black",
+//     backgroundColor: state.isSelected ? "hotpink" : "white",
+//   }),
+// };
 
 function getChapter(chapterNo) {
   switch (chapterNo) {
@@ -45,6 +47,8 @@ function getChapter(chapterNo) {
       return <PolyfillExample />;
     case 5:
       return <XSSAttackExample />;
+    case 6:
+      return <ShadowDOMExample />;
     default:
       return null;
   }
@@ -52,7 +56,7 @@ function getChapter(chapterNo) {
 
 export default function JS_Concepts() {
   const [chapterNo, setChapterNo] = useState(1);
-  const [selectedOption, setSelectedOption] = useState(null);
+  // const [selectedOption, setSelectedOption] = useState(null);
   return (
     <div
       style={{
