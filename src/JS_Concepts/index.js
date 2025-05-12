@@ -7,6 +7,7 @@ import { FilterableList } from "./FilterableList";
 import { PolyfillExample } from "./Polyfill";
 import { XSSAttackExample } from "./XSSAttack";
 import { ShadowDOMExample } from "./ShadowDOM";
+import { LazySuspenseExample } from "./LazySuspense";
 // import Select from "react-select/base";
 // import Select from "react-select/base";
 
@@ -17,6 +18,7 @@ const options = [
   { value: 4, label: "Polyfill" },
   { value: 5, label: "XSS Attacks" },
   { value: 6, label: "Shadow DOM" },
+  { value: 7, label: "Lazy/Suspense" },
 ];
 
 // const customStyles = {
@@ -49,6 +51,8 @@ function getChapter(chapterNo) {
       return <XSSAttackExample />;
     case 6:
       return <ShadowDOMExample />;
+    case 7:
+      return <LazySuspenseExample />;
     default:
       return null;
   }

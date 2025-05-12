@@ -7,6 +7,7 @@
     "@tanstack/react-query": "^5.66.0",
     "axios": "^1.7.9",
     "cra-template": "1.2.0",
+    "date-fns": "^4.1.0",
     "rc-select": "^14.16.6",
     "rc-tree": "^5.13.0",
     "react": "^19.0.0",
