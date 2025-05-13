@@ -2,7 +2,7 @@
 
 export function GeneratorFunctionsExample() {
   function* greeting(name) {
-    yield "hello";
+    yield "hello"; // await Promise.resolve()
     yield "How are ya?";
     yield name;
   }
@@ -22,7 +22,9 @@ export function GeneratorFunctionsExample() {
   ////////////////////////////////////////////////
 
   function* getNumber(num) {
+    // Only invoked when called...
     while (true) yield num++;
+    // NOT an infinite loop
   }
 
   const getNum = getNumber(10);
@@ -35,7 +37,7 @@ export function GeneratorFunctionsExample() {
   console.log(getNum.next().value);
 
   for (let i = 0; i < 10; i++) {
-    console.log(getNum.next().value);
+    console.log(getNum.next());
   }
 
   return (
