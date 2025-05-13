@@ -8,6 +8,7 @@ import { PolyfillExample } from "./Polyfill";
 import { XSSAttackExample } from "./XSSAttack";
 import { ShadowDOMExample } from "./ShadowDOM";
 import { LazySuspenseExample } from "./LazySuspense";
+import { GeneratorFunctionsExample } from "./GeneratorFunctions";
 // import Select from "react-select/base";
 // import Select from "react-select/base";
 
@@ -19,6 +20,7 @@ const options = [
   { value: 5, label: "XSS Attacks" },
   { value: 6, label: "Shadow DOM" },
   { value: 7, label: "Lazy/Suspense" },
+  { value: 8, label: "Generator Functions" },
 ];
 
 // const customStyles = {
@@ -53,6 +55,8 @@ function getChapter(chapterNo) {
       return <ShadowDOMExample />;
     case 7:
       return <LazySuspenseExample />;
+    case 8:
+      return <GeneratorFunctionsExample />;
     default:
       return null;
   }
